@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.5'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+group = 'com.companyname.mywebapp'
+version = '1.0'
+
+description = """mywebapp Maven Webapp"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+
+repositories {
+
+     maven { url "http://repo.maven.apache.org/maven2" }
+     mavenCentral()
+
+}
+
+dependencies {
+    def tomcatVersion = '8.0.42'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
