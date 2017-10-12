@@ -12,6 +12,10 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'com.bmuschko.tomcat'
 
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+}
 group = 'com.companyname.mywebapp'
 version = '1.0'
 
